@@ -1,6 +1,9 @@
 package com.codedifferentlty.labs.partD;
 
-public class POI implements Comparable <POI>{
+
+import java.util.Arrays;
+
+public class POI implements Comparable<POI> {
     private String name;
     private int[] rating;
     private int ratingCount;
@@ -39,6 +42,7 @@ public class POI implements Comparable <POI>{
 
         this.rating[ratingCount] = rating;
         ratingCount++;
+        System.out.println(ratingCount);
     }
 
     public void setName(String name) {
@@ -48,5 +52,9 @@ public class POI implements Comparable <POI>{
     @Override
     public int compareTo(POI other) {
         return Integer.compare(this.ratingCount, other.ratingCount);
+    }
+    @Override
+    public String toString(){
+        return String.format("%s, %d", name, ratingCount);
     }
 }
