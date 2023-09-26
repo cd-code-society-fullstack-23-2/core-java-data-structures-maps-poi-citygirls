@@ -1,23 +1,24 @@
 package com.codedifferentlty.labs.partD;
 
-public class POI {
+public class POI implements Comparable <POI>{
     private String name;
     private int[] rating;
     private int ratingCount;
 
-    public POI(String name) {
+    public POI(String name, int rating) {
         this.name = name;
-        this.rating = new int[10];
+        this.rating = new int[5];
         this.ratingCount = 0;
     }
+
 
     public String getName() {
         return name;
     }
 
-    public double getRating() {
+    public Double getRating() {
         if (ratingCount == 0) {
-            return 0.0;
+            return null;
         }
 
         int total = 0;
@@ -42,5 +43,10 @@ public class POI {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public int compareTo(POI other) {
+        return Integer.compare(this.ratingCount, other.ratingCount);
     }
 }
