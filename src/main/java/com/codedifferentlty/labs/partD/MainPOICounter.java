@@ -17,7 +17,7 @@ public class MainPOICounter {
         poiCounter.addToPOI("South Beach", 2);
         poiCounter.addToPOI("Miami Design District", 3);
         poiCounter.addToPOI("Wynwood", 4);
-        poiCounter.addToPOI("Liv", 5);
+        poiCounter.addToPOI("LIV", 5);
         poiCounter.addToPOI("Versace Mansion", 3);
 
         displayPOI(poiCounter.getPOI());

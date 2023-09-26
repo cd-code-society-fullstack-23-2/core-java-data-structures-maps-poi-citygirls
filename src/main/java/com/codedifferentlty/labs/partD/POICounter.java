@@ -17,7 +17,7 @@ public class POICounter {
 
     public void addToPOI(String name, double rating) {
 
-        double currentRating = poi.getOrDefault(name, rating);
+        double currentRating = poi.getOrDefault(name, 0.0);
         poi.put(name, currentRating + rating);
     }
 
