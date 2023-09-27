@@ -14,17 +14,18 @@ public class MainPOICounter {
     public static void main(String[] args) {
         POICounter poiCounter = new POICounter();
 
-        poiCounter.addToPOI("South Beach", 2);
-        poiCounter.addToPOI("Miami Design District", 3);
-        poiCounter.addToPOI("Wynwood", 4);
-        poiCounter.addToPOI("LIV", 5);
-        poiCounter.addToPOI("Versace Mansion", 3);
+        poiCounter.addRating("South Beach", 2);
+        poiCounter.addRating("Miami Design District", 3);
+        poiCounter.addRating("Wynwood", 4);
+        poiCounter.addRating("LIV", 5);
+        poiCounter.addRating("Versace Mansion", 3);
+        poiCounter.addRating("E11even", 4);
 
-        displayPOI(poiCounter.getPOI());
+//        displayPOI(poiCounter.getPOI());
 
-        poiCounter.addToPOI("South Beach", 1);
-        poiCounter.removeFromPOI("Miami Design District", .5);
+        poiCounter.addRating("South Beach", 1);
+        poiCounter.removeRating("Miami Design District", .5);
 
-        displayPOI(poiCounter.getPOI());
+//        displayPOI(poiCounter.getPOI());
     }
 }

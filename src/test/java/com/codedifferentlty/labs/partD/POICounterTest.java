@@ -14,22 +14,22 @@ public class POICounterTest {
 
     @Test
     void addToPOITest01 (){
-        poiCounter.addToPOI("Zoo Miami", 2.0);
+        poiCounter.addRating("Zoo Miami", 2.0);
         assertEquals(2.0, poiCounter.getPOI().get("Zoo Miami"));
 
-        poiCounter.addToPOI("Zoo Miami", 1.0);
+        poiCounter.addRating("Zoo Miami", 1.0);
         assertEquals(3.0,poiCounter.getPOI().get("Zoo Miami"));
     }
 
     @Test
     void removeFromPOITest01(){
-        poiCounter.addToPOI("Zoo Miami", 5.0);
+        poiCounter.addRating("Zoo Miami", 5.0);
         assertEquals(5.0, poiCounter.getPOI().get("Zoo Miami"));
 
-        poiCounter.removeFromPOI("Zoo Miami", 1.0);
+        poiCounter.removeRating("Zoo Miami", 1.0);
         assertEquals(4.0, poiCounter.getPOI().get("Zoo Miami"));
 
-        poiCounter.removeFromPOI("Zoo Miami",4.0);
+        poiCounter.removeRating("Zoo Miami",4.0);
         assertEquals(0.0, poiCounter.getPOI().get("Zoo Miami"));
     }
 }

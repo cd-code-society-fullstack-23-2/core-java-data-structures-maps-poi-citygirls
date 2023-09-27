@@ -5,27 +5,47 @@ import java.util.Map;
 
 public class POICounter {
 
-    private Map<String, Double> poi = new HashMap<>();
+    private Map<POI, Double> locations = new HashMap<>();
 
     public POICounter() {
-        poi = new HashMap<>();
+        locations = new HashMap<>();
     }
 
-    public Map<String, Double> getPOI() {
-        return poi;
+    public Map<POI, Double> getPOI() {
+        return locations;
     }
 
-    public void addToPOI(String name, double rating) {
-
-        double currentRating = poi.getOrDefault(name, 0.0);
-        poi.put(name, currentRating + rating);
+    public void addPOI(POI poi, Double rating){
+        locations.put(poi, rating);
     }
 
-    public void removeFromPOI(String name, double rating) {
-        if (poi.containsKey(name)) {
-            double currentRating = poi.get(name);
+    public void addRating(String name, double rating) {
 
-            poi.put(name, Math.max(0, currentRating - rating));
+//        double currentRating = locations.getOrDefault(name, 0.0);
+//        locations.put(poi, currentRating + rating);
+    }
+
+    public void removePOI(String name){
+
+    }
+
+
+
+
+    public void removeRating(String name, double rating) {
+//        if (locations.containsKey(name)) {
+//            double currentRating = locations.get(name);
+//
+//            locations.put(name, Math.max(0, currentRating - rating));
+//        }
+    }
+
+    public void displayPOI(Map<POI, Double>POIList) {
+   for (Map.Entry<POI, Double> entry : POIList.entrySet()) {
+            System.out.println(entry.getKey().toString() + "  (Rating " + entry.getValue() + "/5)");
         }
+        }
+
+
     }
-}
+
