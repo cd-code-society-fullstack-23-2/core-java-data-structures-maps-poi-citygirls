@@ -6,12 +6,12 @@ public class MainPoiApp {
     public static void main(String[] args) {
         // Create instances of various POI objects
 
-        POI southBeach = new POI("South Beach", 1);
-        POI versaceMansion = new POI("Versace Mansion", 7);
-        POI wynWood = new POI("Wynwood", 6);
-        POI designDistrict = new POI("Design District", 9);
+        POI southBeach = new POI("South Beach", 2);
+        POI versaceMansion = new POI("Versace Mansion", 3);
+        POI wynWood = new POI("Wynwood", 1);
+        POI designDistrict = new POI("Design District", 3);
         POI clubLiv = new POI("Club Liv", 5);
-        POI clubEleven = new POI("Club Eleven", 0);
+        POI clubEleven = new POI("Club Eleven", 1);
 
         // Compare and print the ratings of different POI objects
 
