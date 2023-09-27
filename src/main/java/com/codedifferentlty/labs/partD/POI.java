@@ -1,52 +1,43 @@
 package com.codedifferentlty.labs.partD;
 
-public class POI implements Comparable <POI>{
+class POI {
+    // Private instance variables for the name and rating of the POI
     private String name;
-    private int[] rating;
-    private int ratingCount;
+    private double rating;
 
-    public POI(String name, int rating) {
+    // Constructor to initialize a POI with a name and rating
+    public POI(String name, double rating) {
         this.name = name;
-        this.rating = new int[5];
-        this.ratingCount = 0;
+        this.rating = rating;
     }
-
-
+    // Getter method to retrieve the name of the POI
     public String getName() {
         return name;
     }
-
-    public Double getRating() {
-        if (ratingCount == 0) {
-            return null;
-        }
-
-        int total = 0;
-        for (int i = 0; i < ratingCount; i++) {
-            total += rating[i];
-        }
-        return (double) total / ratingCount;
+    // Getter method to retrieve the rating of the POI
+    public double getRating() {
+        return rating;
+    }
+    // Setter method to update the rating of the POI
+    public void setRating(double rating) {
+        this.rating = rating;
     }
 
-    public void addRating(int rating) {
-        if (ratingCount == this.rating.length) {
-            int[] newArray = new int[this.rating.length * 2];
-            for (int i = 0; i < this.rating.length; i++) {
-                newArray[i] = this.rating[i];
-            }
-            this.rating = newArray;
+    // Custom comparison method for comparing two POI objects
+    public int compareTo(POI poi2) {
+        // Implement your comparison logic here
+        // You can compare the ratings of two POI objects and return a result accordingly
+        if (this.rating < poi2.rating) {
+            return -1;
+        } else if (this.rating > poi2.rating) {
+            return 1;
+        } else {
+            return 0; // Ratings are equal
         }
-
-        this.rating[ratingCount] = rating;
-        ratingCount++;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     @Override
-    public int compareTo(POI other) {
-        return Integer.compare(this.ratingCount, other.ratingCount);
+    public String toString(){
+        return String.format("%s, %.2f", name, rating);
     }
 }
+

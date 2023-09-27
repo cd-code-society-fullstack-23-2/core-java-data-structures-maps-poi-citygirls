@@ -5,27 +5,42 @@ import java.util.Map;
 
 public class POICounter {
 
-    private Map<String, Double> poi = new HashMap<>();
+    // A map to store POI objects by their names
+    private Map<String, POI> poiMap = new HashMap<>();
 
-    public POICounter() {
-        poi = new HashMap<>();
+    // Add a new POI with a given name and an initial rating of 0.0
+    public void addToPOI(String name, double v) {
+        poiMap.putIfAbsent(name, new POI(name, 0.0));
     }
 
-    public Map<String, Double> getPOI() {
-        return poi;
+    // Rate an existing POI by its name
+    public void rateToPOI(String name, double rating) {
+        if (poiMap.containsKey(name)) {
+            POI poi = poiMap.get(name);
+            poi.setRating(poi.getRating() + rating);
+        }
     }
 
-    public void addToPOI(String name, double rating) {
-
-        double currentRating = poi.getOrDefault(name, 0.0);
-        poi.put(name, currentRating + rating);
+    // Retrieve a POI by its name
+    public POI getPOI(String name) {
+        return poiMap.get(name);
     }
 
-    public void removeFromPOI(String name, double rating) {
-        if (poi.containsKey(name)) {
-            double currentRating = poi.get(name);
+    //display the POIs
+    public void displayAllPOIs() {
+        System.out.println("Displaying all Points of Interest:");
+        for (POI poi : poiMap.values()) {
+            System.out.println("POI Name: " + poi.getName() + ", Rating: " + poi.getRating());
+        }
+    }
 
-            poi.put(name, Math.max(0, currentRating - rating));
+    // Remove a POI by its name
+    public void deletePOI(String name) {
+        if (poiMap.containsKey(name)) {
+            poiMap.remove(name);
+            System.out.println(name + " has been deleted.");
+        } else {
+            System.out.println(name + " does not exist.");
         }
     }
 }
