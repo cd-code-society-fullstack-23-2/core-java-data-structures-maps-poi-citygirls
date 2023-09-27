@@ -22,13 +22,13 @@ public class POITest {
 
     @Test
     public void compareToTest01(){
-        POI poi2 = new POI ("South Beach",4);
+        POI poi2 = new POI ("South Beach",2);
         POI poi1 = new POI("Zoo Miami",3);
         assertFalse(poi1.compareTo(poi2) < 0, "Zoo Miami has a lower rating rating than South Beach");
     }
     @Test
     public void compareToTest02(){
-        POI poi2 = new POI ("South Beach", 4);
+        POI poi2 = new POI ("South Beach", 2);
         POI poi1 = new POI ("Zoo Miami", 3);
         assertFalse(poi2.compareTo(poi1)>0, "South Beach has a higher rating than Zoo Miami.");
     }
